@@ -4,6 +4,7 @@
                fromlogo=true, fromrule=false]{scrlttr2}
  
 \usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{german}
 \RequirePackage{graphicx}
  
@@ -13,7 +14,9 @@
 \setkomavar{signature}{Mathias Dalheimer}
 \setkomavar{fromlogo}{\includegraphics*[width=4cm]{../logo-schwarz.pdf}}
 
-\def\chopline#1;#2;#3;#4;#5;#6;#7;#8;#9 \\{
+% Line parsing sucks. See
+% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=moren9
+\def\chopline#1;#2;#3;#4;#5;#6;#7;#8;#9{
   \if #1w \def\geschlecht{w} \fi
   \if #1m \def\geschlecht{m} \fi
   \if \geschlecht w \def\anrede{Frau} \fi
@@ -24,11 +27,19 @@
   \def\hausnummer{#5}
   \def\plz{#6}
   \def\ort{#7}
-  \def\eintrittsdatum{#8}
-  \def\bezahltbis{#9}
+  \def\email{#8}
+  \def\eintrittsdatum{#9}
+  \contchopline
 }
+\def\contchopline#1;#2\\{
+  \def\bezahltbis{#1}
+  \def\mitgliedsnummer{#2}
+}
+
  
 \newif\ifmore \moretrue
+
+
 \begin{document}
 \newread\quelle
 \openin\quelle=../../mnt/adressen.dat
@@ -46,7 +57,7 @@
 \if \geschlecht w \opening{Liebe \vorname,} \fi
 \if \geschlecht m \opening{Lieber \vorname,} \fi
 ich möchte Dich zur Gründungsversammlung unseres Vereins "`Chaos inKL."'
-einladen. Wir treffen uns am XX.YY.2011 an der Universität
+einladen. Wir treffen uns am 26.02.2011 ab 17:00 an der Universität
 Kaiserslautern, Raum 48/462. Als Tagesordnung ist vorgesehen:
 \begin{enumerate}
   \item Begrüßung
@@ -54,7 +65,8 @@ Kaiserslautern, Raum 48/462. Als Tagesordnung ist vorgesehen:
   \item Genehmigung der Tagesordnung
   \item Aussprache über die Gründung des Vereins "`Chaos inKL."'
   \item Beratung und Verabschiedung einer Satzung, einer Geschäftsordnung der Mitgliederversammlung und einer Beitragsordnung
-  \item Wahlen des Vorstandes
+  \item Wahlen des Vorstandes und Verabschiedung der Geschäftsordnung
+    des Vorstandes
   \item Verschiedenes
 \end{enumerate}
 Den Entwurf einer Vereinssatzung, einer Geschäftsordnung der Mitgliederversammlung und einer Beitragsordnung habe ich angefügt. Dem Anlass

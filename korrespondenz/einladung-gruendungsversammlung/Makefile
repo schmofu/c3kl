@@ -29,6 +29,7 @@ clean:
 	-rm -f $(AUX)
 	-rm -f *.log
 	-rm -f *.bbl
+	-rm -f $(PDF)
 	-rm -f *.out
 	-rm -f *.blg
 
