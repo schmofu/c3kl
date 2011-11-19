@@ -1,0 +1,95 @@
+\documentclass[]{scrartcl}
+ 
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{german}
+\RequirePackage{graphicx}
+
+\usepackage{wasysym}% provides \ocircle and \Box
+
+\usepackage{wrapfig}
+
+\usepackage{eurosym}
+
+\usepackage{forloop}
+
+\usepackage[]{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+ 
+%% \QO = Circle or box to be ticked.
+\newcommand{\QO}{$\Box$}% or: $\ocircle$
+
+%% \Qline = Draws a line with the given length
+\newcommand{\Qline}[1]{\rule{#1}{0.6pt}}
+
+%% \Qlines = Insert NUM lines with width=\linewith. You can change the
+%% \vskip value to adjust the spacing.
+\newcounter{ql}
+\newcommand{\Qlines}[1]{\forloop{ql}{0}{\value{ql}<#1}{\vskip0em\Qline{\linewidth}}}
+
+%\setkomavar{fromlogo}{\includegraphics*[width=4cm]{../logo-schwarz.pdf}}
+%\ihead{\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}c}
+%		\Huge Chaos inKL. e.V. & \multirow{3}{*}{\includegraphics*[width=2cm]{../korrespondenz/logo-schwarz.pdf}} \\
+%		\small http://chaostreff-kaiserslautern.de, vorstand@chaostreff-kaiserslautern.de & \\
+%		\small c/o Stephan Platz, Konrad-Adenauer-Straße 41, 67663 Kaiserslautern & \\
+%	\end{tabular*}}
+\begin{document}
+	\begin{wrapfigure}{r}{4.2cm}
+		\includegraphics*[width=4cm]{../korrespondenz/logo-schwarz.pdf}
+	\end{wrapfigure}
+	\noindent \Huge Chaos inKL. \\
+	\small http://chaostreff-kaiserslautern.de \\
+	\small vorstand@chaostreff-kaiserslautern.de \\
+	\small c/o Stephan Platz \\
+	\small Konrad-Adenauer-Straße 41 \\
+	\small 67663 Kaiserslautern
+
+	\vspace{2em}
+
+	\section*{Antrag auf Mitgliedschaft}
+
+	\fbox{
+		\begin{tabular*}{\textwidth}{cl@{\extracolsep{\fill}}}
+			\QO & Ja, ich möchte Mitglied im Verein Chaos inKL. e.V. werden. \\
+			 & Die Satzung\footnotemark[1] habe ich gelesen, die aktuell gültige Beitragsordnung\footnotemark[1] ist mir gekannt. \\
+			 & Ich zahle meinen Mitgliedsbeitrag ... \\
+			 & \begin{tabular}{cl}
+				\QO & halbjährlich durch Überweisung\footnotemark[2] \\
+				 & 60\euro{} im Januar und 60\euro{} im Juli (+ einmalig 10\euro{} Aufnahmegebühr) \\
+				\QO & jährlich durch Überweisung\footnotemark[2] \\
+				 & 120\euro{} im Januar (+ einmalig 10\euro{} Aufnahmegebühr) \\
+			\end{tabular}
+		\end{tabular*}
+	}
+
+	\subsection*{Mitgliedsdaten}
+	{\tiny Bitte leserlich in Druckschrift ausfüllen}
+	\vspace{3em}
+
+	\noindent
+	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}}
+		% anrede fehlt noch
+		\Qline{5cm} & \Qline{5cm} \\
+		Vorname & Nachname \\[1.5em]
+		\multicolumn{2}{l}{\Qline{12.15cm}} \\
+		Straße, Hausnummer \\[1.5em]
+		\Qline{3cm} & \Qline{5cm} \\
+		Postleitzahl & Ort \\[1.5em]
+		\multicolumn{2}{l}{\Qline{12.15cm}} \\
+		E-Mail-Adresse & \\[1.5em]
+		\multicolumn{2}{l}{Anmerkungen: \Qline{9.75cm}} \\[1em]
+		\multicolumn{2}{l}{\Qline{12.15cm}} \\[1em]
+		\multicolumn{2}{l}{\Qline{12.15cm}} \\
+	\end{tabular*}
+
+	\vspace{3em}
+
+	\noindent
+	\Qline{5cm} \hspace{1cm} \Qline{5cm} \\
+	Ort, Datum \hspace{4.2cm} Unterschrift
+
+	\footnotetext[1]{http://chaostreff-kaiserslautern.de/wiki/verein}
+	\footnotetext[2]{Kontoinhaber: Chaos inKL. e.V., Kontonummer: 535948, Bankleitzahl: 54050110}
+\end{document}
+
