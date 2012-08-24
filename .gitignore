@@ -2,3 +2,5 @@ mnt
 *.aux
 *.log
 *.out
+
+.DS_Store
