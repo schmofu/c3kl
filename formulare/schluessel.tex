@@ -24,6 +24,14 @@
 \TextField[name={#1},value={#2},width=7em,align=2,%
 bordercolor={1 1 1},readonly=true]{}%
 }
+\newcommand{\bearbeitungsgebuehr}{
+	%TODO
+	\TextField[name=bg,width=2em,readonly=true]{}
+}
+\newcommand{\kaution}{
+	%TODO
+	\TextField[name=kaution,width=2em,,readonly=true]{}
+}
 \begin{document}
 \begin{floatingfigure}{0.35\textwidth}
     \vspace{1cm}
@@ -85,8 +93,8 @@ bordercolor={0.65 0.79 0.94}]{}\\
 
 \section*{Finanzielles}
 \begin{itemize}
- \item Für die Erstellung und Ausgabe der Schlüssel wird eine Bearbeitungsgebühr in Höhe von XX€ erhoben.
- \item Bei der Ausgabe der Schlüssel wird eine Kaution in Höhe von XX€ eingezahlt. Die Kaution wird nach Rückgabe der Schlüssel erstattet.
+ \item Für die Erstellung und Ausgabe der Schlüssel wird eine Bearbeitungsgebühr in Höhe von \bearbeitungsgebuehr€ erhoben.
+ \item Bei der Ausgabe der Schlüssel wird eine Kaution in Höhe von \kaution€ eingezahlt. Die Kaution wird nach Rückgabe der Schlüssel erstattet.
  \item Bearbeitungsgebühr und Kaution sind bei Schlüsselübergabe zu bezahlen.
 \end{itemize}
 
