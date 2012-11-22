@@ -1,4 +1,4 @@
-\documentclass[ngerman,a4paper]{scrartcl}
+\documentclass[ngerman,a4wide]{scrartcl}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -8,7 +8,7 @@
 \renewcommand*{\familydefault}{phv}
 \usepackage[left=25mm,top=25mm,bottom=10mm,right=10mm]{geometry}
 \usepackage{fancyhdr}
-\lhead{Chaos inKL. e.V.}\chead{}\rhead{Formular C21\tiny{V2012.11.21}}
+\lhead{Chaos inKL. e.V.}\chead{}\rhead{Formular C21\tiny{V2012.11.22}}
 \lfoot{}\cfoot{}\rfoot{}
 \pagestyle{fancy}
 \usepackage{graphicx}
@@ -26,12 +26,15 @@ bordercolor={1 1 1},readonly=true]{}%
 }
 \newcommand{\bearbeitungsgebuehr}{
 	%TODO
-	\TextField[name=bg,width=2em,readonly=true]{}
+	%\TextField[name=bg,width=2em,readonly=true]{}
+	5
 }
 \newcommand{\kaution}{
 	%TODO
-	\TextField[name=kaution,width=2em,,readonly=true]{}
+	%\TextField[name=kaution,width=2em,,readonly=true]{}
+	20
 }
+\renewcommand{\baselinestretch}{1}
 \begin{document}
 \begin{floatingfigure}{0.35\textwidth}
     \vspace{1cm}
@@ -65,13 +68,13 @@ bordercolor={0.65 0.79 0.94}]{}\\
 \hline
 \end{tabular}
 
-\vspace{1cm}
+
 
 \begin{minipage}{12cm}
 An o.g. Person wurden am 
 \TextField[name=date,width=7em,%
 bordercolor={0.65 0.79 0.94}]{}
-folgende Schlüssel übergeben:
+folgende Schlüssel übergeben:\\
 \end{minipage}
 \hfill
 \begin{tabular}{|rl|}
@@ -90,17 +93,19 @@ bordercolor={0.65 0.79 0.94}]{}\\
 &\\
 \hline
 \end{tabular}
-
+\vspace{-1cm}
 \section*{Finanzielles}
 \begin{itemize}
- \item Für die Erstellung und Ausgabe der Schlüssel wird eine Bearbeitungsgebühr in Höhe von \bearbeitungsgebuehr€ erhoben.
+\setlength{\itemsep}{-2pt}
+ \item Für die Erstellung und Ausgabe der Schlüssel wird eine Bearbeitungsgebühr in Höhe von \bearbeitungsgebuehr€ je Schlüssel erhoben.
  \item Bei der Ausgabe der Schlüssel wird eine Kaution in Höhe von \kaution€ eingezahlt. Die Kaution wird nach Rückgabe der Schlüssel erstattet.
  \item Bearbeitungsgebühr und Kaution sind bei Schlüsselübergabe zu bezahlen.
 \end{itemize}
 
 \section*{Regeln}
-Der Empfänger der Schlüssel erklärt das Folgende:\\
+Der Empfänger der Schlüssel erklärt das Folgende:
 \begin{itemize}
+ \setlength{\itemsep}{-2pt}
  \item Die zur Verfügung gestellten Schlüssel werden nicht eigenmächtig vervielfältigt.
  \item Das Ausleihen, die Weitergabe, sowie das Verschenken der zur Verfügung gestellten Schlüssel ist untersagt.
  \item Nach Aufforderung durch den Chaos inKL. e.V. werden die zur Verfügung gestellten Schlüssel unverzüglich zurückgegeben. 
@@ -108,15 +113,31 @@ Der Empfänger der Schlüssel erklärt das Folgende:\\
  \item Die zur Verfügung gestellten Schlüssel dürfen nur für Zwecke verwendet werden, die die Ziele des Chaos inKL. e.V. fördern.
  \item Bei Verlust von einem oder mehreren Schlüsseln ist dies unverzüglich dem Chaos inKL. e.V. zu melden.
 \end{itemize}
+
+\vspace{2cm}
+\begin{minipage}{5cm}
+ \dotfill\\
+ Ort, Datum
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{5cm}
+ \dotfill\\
+ Unterschrift
+\end{minipage}
+
+\section*{Rückgabe}
+Die o.g. Schlüssel wurden am \TextField[name=date2,width=7em,%
+bordercolor={0.65 0.79 0.94}]{} zurückgegeben, die Kaution in Höhe von\kaution€ wurde ausgezahlt.\\
 \vfill
 \begin{minipage}{5cm}
  \dotfill\\
  Ort, Datum
 \end{minipage}
 \hspace{1cm}
-\begin{minipage}{7cm}
+\begin{minipage}{5cm}
  \dotfill\\
- Unterschrift
+ Kaution erhalten
 \end{minipage}
+
 \end{Form}
 \end{document}
